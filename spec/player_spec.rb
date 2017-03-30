@@ -8,13 +8,6 @@ describe Player do
     expect(steve.name).to eq 'steve'
   end
 
-  describe '#attack' do
-    it 'damages the player' do
-      expect(steve).to receive(:receive_damage)
-      bob.attack(steve)
-    end
-  end
-
   describe '#receive_damage' do
     it 'Reduces hit points by 10' do
       expect{steve.receive_damage}.to change{steve.hit_points}.by(-10)
