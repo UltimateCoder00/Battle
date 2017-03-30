@@ -14,7 +14,7 @@ describe Game do
     end
   end
 
-  describe 'players' do
+  describe 'receives players' do
     it '#player_1' do
       expect(game.player_1).to eq steve
     end
