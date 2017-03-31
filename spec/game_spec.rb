@@ -1,26 +1,41 @@
 require 'game'
 
 describe Game do
+  subject(:game) { described_class.new(player_1, player_2) }
+  let(:player_1) { double :player_1 }
+  let(:player_2) { double :player_2 }
 
-  subject(:game) {described_class.new(steve, bob)}
+  describe '#initialization' do
+  end
 
-  let(:steve) {double('Steve')}
-  let(:bob) {double('Bob')}
-
-  describe '#attack' do
-    it 'attacks the player' do
-      allow(steve).to receive(:receive_damage)
-      game.attack(steve)
+  describe '#player_1' do
+    it 'retrieves the first player' do
+      expect(game.player_1).to eq player_1
     end
   end
 
-  describe 'receives players' do
-    it '#player_1' do
-      expect(game.player_1).to eq steve
+  describe '#player_2' do
+    it 'retrieves the second player' do
+      expect(game.player_2).to eq player_2
     end
+  end
 
-    it '#player_2' do
-      expect(game.player_2).to eq bob
+  describe '#attack' do
+    it 'damages a player' do
+      allow(player_2).to receive(:receive_damage)
+      game.attack(player_2)
+    end
+  end
+
+  describe '#current_turn' do
+    it 'starts as player 1' do
+      expect(game.current_turn).to eq player_1
+    end
+  end
+
+  describe '#switch_turn' do
+    it 'switches player 1 to player 2' do
+      expect(game.switch_turn).to eq player_2
     end
   end
 end

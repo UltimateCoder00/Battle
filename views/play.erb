@@ -1,5 +1,11 @@
-<p><%=@game.player_1.name%> vs. <%=@game.player_2.name%></p>
+<img  src="http://www.needtoconsume.com/wp-content/uploads/2014/07/Adam-West-and-Burt-Ward.jpg" height="400" width="666">
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 
-<p><%=@game.player_2.name%>: <%=@game.player_2.hit_points%>/60 HP</p>
+<h2><%= @game.player_1.name%>'s hit points: <%= @game.player_1.hit_points%>HP</h2>
+<h2><%= @game.player_2.name%>'s hit points: <%= @game.player_2.hit_points%>HP</h2>
 
-<a href="/attack">Attack</a>
+<h2><%= @game.current_turn.name %>'s turn
+
+<form action="/attack">
+  <input type="submit" value="HIT!">
+</form>

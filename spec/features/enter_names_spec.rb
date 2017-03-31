@@ -1,7 +1,6 @@
 feature 'Enter names' do
-
-  scenario 'can view names after entering them on a form' do
+  scenario 'Can fill in name in form and submit with name returned' do
     sign_in_and_play
-    expect(page).to have_content 'John vs. Steve'
+    expect(page).to have_content 'Elaine vs. Pixel'
   end
 end

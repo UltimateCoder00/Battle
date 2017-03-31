@@ -1,2 +1,13 @@
-<p><%=@game.player_1.name%> attacked <%=@game.player_2.name%></p>
-<p><%=@game.player_2.name%>: <%=@game.player_2.hit_points%>/60 HP</p>
+<img  src="http://www.needtoconsume.com/wp-content/uploads/2014/07/Adam-West-and-Burt-Ward.jpg" height='400' width='666'>
+<br></br>
+
+<h1><%= @game.current_turn.name %>'s turn </h1>
+
+<h1>POW! <%=@game.current_turn.name%> attacks <%=@game.opponent_of(@game.current_turn).name%></h1>
+<h2><%=@game.opponent_of(@game.current_turn).name%>'s hit points: <%=@game.opponent_of(@game.current_turn).hit_points%>HP</h2>
+<h2>OUCH! YOU HAVE BEEN ATTACKED!!!!!!!!!</h2>
+<h2><%= @game.current_turn.name %>'s turn
+
+<form action="/switch-turns" method='post'>
+  <input type="submit" value="OK">
+</form>

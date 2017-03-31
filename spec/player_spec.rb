@@ -1,16 +1,25 @@
 require 'player'
 
 describe Player do
-  subject(:bob) {described_class.new('bob')}
-  subject(:steve) {described_class.new('steve')}
+  subject(:ruan) {described_class.new('Ruan')}
+  subject(:elaine) {described_class.new('Elaine')}
 
-  it 'Test method to return name' do
-    expect(steve.name).to eq 'steve'
+  describe '#initialization' do
+    it 'should return a players name' do
+      expect(ruan.name).to eq 'Ruan'
+    end
+  end
+
+  describe '#hit_points' do
+    it 'returns hit points' do
+      expect(ruan.hit_points).to eq described_class::DEFAULT_HIT_POINTS
+    end
   end
 
   describe '#receive_damage' do
-    it 'Reduces hit points by 10' do
-      expect{steve.receive_damage}.to change{steve.hit_points}.by(-10)
+    it 'should reduce player 2\'s HP by 10' do
+      expect { ruan.receive_damage }.to change{ ruan.hit_points }.by -10
     end
   end
+
 end
