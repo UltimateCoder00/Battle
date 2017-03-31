@@ -13,4 +13,5 @@ class Player
   def receive_damage
     @hit_points -= DAMAGE
   end
+
 end

@@ -38,4 +38,13 @@ describe Game do
       expect(game.switch_turn).to eq player_2
     end
   end
+
+  describe '#game_over' do
+    it "ends the game when a player's HP reaches 0" do
+      allow(player_1).to receive(:hit_points).and_return(0)
+      game.game_on?
+      expect(game.game_over).to eq true
+    end
+  end
+
 end

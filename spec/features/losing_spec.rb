@@ -5,7 +5,7 @@ feature "Confirmation of player losing" do
       click_button "HIT!"
       click_button 'OK'
     end
-    expect(page).to have_content "You have been killed"
+    expect(page).to have_content "You have been defeated"
 
   end
 end
