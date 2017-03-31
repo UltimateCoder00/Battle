@@ -1,13 +1,21 @@
-<img  src="http://www.needtoconsume.com/wp-content/uploads/2014/07/Adam-West-and-Burt-Ward.jpg" height='400' width='666'>
-<br></br>
+<style>
+  body {
+    background-image: url(https://media.giphy.com/media/q9HHyHPISNZD2/giphy.gif);
+    background-size: cover;
+    color: yellow
+  }
+</style>
 
-<h1><%= @game.current_turn.name %>'s turn </h1>
 
-<h1>POW! <%=@game.current_turn.name%> attacks <%=@game.opponent_of(@game.current_turn).name%></h1>
-<h2><%=@game.opponent_of(@game.current_turn).name%>'s hit points: <%=@game.opponent_of(@game.current_turn).hit_points%>HP</h2>
-<h2>OUCH! YOU HAVE BEEN ATTACKED!!!!!!!!!</h2>
-<h2><%= @game.current_turn.name %>'s turn
+<body>
+  <h1><%= @game.current_turn.name %>'s turn </h1>
 
-<form action="/switch-turns" method='post'>
-  <input type="submit" value="OK">
-</form>
+  <h1>POW! <%=@game.current_turn.name%> attacks <%=@game.opponent_of(@game.current_turn).name%></h1>
+  <h2><%=@game.opponent_of(@game.current_turn).name%>'s hit points: <%=@game.opponent_of(@game.current_turn).hit_points%>HP</h2>
+  <h2>OUCH! YOU HAVE BEEN ATTACKED!!!!!!!!!</h2>
+  <h2><%= @game.current_turn.name %>'s turn
+
+  <form action="/switch-turns" method='post'>
+    <input type="submit" value="OK">
+  </form>
+</body>

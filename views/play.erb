@@ -1,6 +1,22 @@
+<style>
+  body {
+    background-image: url(http://likegif.com/wp-content/uploads/2013/12/napoleon-dynamite-yes-gif-1.gif);
+    background-size: cover;
+    color: white
+  }
+
+  /*h1 {
+    color: white
+  }*/
+
+
+</style>
+
+
 <% if !@game.game_over %>
 
-    <img  src="http://www.needtoconsume.com/wp-content/uploads/2014/07/Adam-West-and-Burt-Ward.jpg" height="400" width="666">
+  <body>
+    <!-- <img  src="http://www.needtoconsume.com/wp-content/uploads/2014/07/Adam-West-and-Burt-Ward.jpg" height="400" width="666"> -->
     <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 
     <h2><%= @game.player_1.name%>'s hit points: <%= @game.player_1.hit_points%>HP</h2>
@@ -11,6 +27,7 @@
     <form action="/attack">
       <input type="submit" value="HIT!">
     </form>
+  </body>
 
 <% else %>
 
